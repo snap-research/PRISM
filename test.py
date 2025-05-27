@@ -17,22 +17,6 @@ from torch_geometric.utils import sort_edge_index
 from tqdm import tqdm
 from utils import *
 
-def stable_rank(x):
-    x = F.normalize(x, dim=-1)
-    return (
-        (torch.linalg.matrix_norm(x, ord="fro").pow(2))
-        / (torch.linalg.matrix_norm(x, ord=2).pow(2))
-    )
-
-
-def alignment(x, y):
-    x, y = F.normalize(x, dim=-1), F.normalize(y, dim=-1)
-    return (x - y).norm(p=2, dim=1).pow(2).mean()
-
-
-def uniformity(x):
-    x = F.normalize(x, dim=-1)
-    return torch.pdist(x, p=2).pow(2).mul(-2).exp().mean().log()
 
 
 class Tester:

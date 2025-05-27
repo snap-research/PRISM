@@ -18,13 +18,6 @@ from torch_geometric.utils import (
 )
 
 ALL_DATASET_ATTRS = {
-    "MovieLens100K": {
-        "user": "user",
-        "action": "rates",
-        "inverse_action": "rated_by",
-        "item": "movie",
-        "label": "rating",
-    },
     "MovieLens1M": {
         "user": "user",
         "action": "rates",

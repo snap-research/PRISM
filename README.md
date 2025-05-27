@@ -1,4 +1,4 @@
-### PRISM 
+# PRISM 
 
 This is the code repository for the paper [On the Role of Weight Decay in Collaborative Filtering: A Popularity Perspective ](https://arxiv.org/abs/2505.11318) by Donald Loveland, Mingxuan Ju, Tong Zhao, Neil Shah, and Danai Koutra. The paper explores the impact of weight decay on collaborative filtering models, particularly in the context of popularity bias in angle-based recommendation systems.
 

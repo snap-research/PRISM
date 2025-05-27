@@ -21,17 +21,17 @@ To train a model, you can use the provided scripts `./run_train_prism.sh`. The s
 
 Current parameters to include within the script, with their default values, are:
 
-DATASET='MovieLens1M' - Dataset to use 
-MODEL='MLP' - Model backbone 
-EPOCHS=1000 - Number of epochs to train the model
-LOSS='align' - Loss function to train with 
-REG='uniformity' - Regularization to use 
-GAMMA='1.0' - Regularization strength
-WD='0.0' - Weight decay strength
-LR='0.001' - Learning rate
-PATIENCE='10' - Early stopping patience
-DEGREE_INIT_STR='1.0' - PRISM initialization strength
-DATA_PATH='model_chkps' - Path to save model checkpoints
+- DATASET='MovieLens1M' - Dataset to use 
+- MODEL='MLP' - Model backbone 
+- EPOCHS=1000 - Number of epochs to train the model
+- LOSS='align' - Loss function to train with 
+- REG='uniformity' - Regularization to use 
+- GAMMA='1.0' - Regularization strength
+- WD='0.0' - Weight decay strength
+- LR='0.001' - Learning rate
+- PATIENCE='10' - Early stopping patience
+- DEGREE_INIT_STR='1.0' - PRISM initialization strength
+- DATA_PATH='model_chkps' - Path to save model checkpoints
 
 ## Running Tests
 To run tests on the trained model, you can use the provided script `./test.sh`. This script will evaluate the model on the MovieLens1M test set and output the results. The default parameters are set in the script, but again, you can modify them as needed.
@@ -39,7 +39,7 @@ To run tests on the trained model, you can use the provided script `./test.sh`. 
 ## Building on Code
 
 1.  `losses.py` - Contains the loss functions and regularizations used in the paper. Any new losses or regularizations should be added here.
-2.  `models.py` - Contains the model architectures used in the paper. Any new models should be added here.
+2.  `models.py` - Contains the model architectures used in the paper. Any new models should be added here. Line 59/67 of this file is where the PRISM initialization is applied to the embedding vectors based on the popularity of users/items. Assuming the dataloader used contains the degree/popularity of the users/items, this logic can easily be applied to any model that uses embedding vectors.
 3.  `dataloader.py` - Contains the data loading and preprocessing logic. If you want to use a different dataset, you can modify this file accordingly.
 
 

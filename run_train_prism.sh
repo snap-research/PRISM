@@ -11,17 +11,18 @@ PATIENCE=$9
 DEGREE_INIT_STR=${10}
 DATA_PATH=${11}
 
-DATASET='MovieLens1M'
-MODEL='MLP'
-EPOCHS=1000
-LOSS='align'
-REG='uniformity'
-GAMMA='1.0'
-WD='0.0'
-LR='0.001'
-PATIENCE='10'
-DEGREE_INIT_STR='1.0'
-DATA_PATH='model_chkps'
+### Defaults set for MovieLens experiment. 
+DATASET='MovieLens1M' # Can choose from MovieLens1M, Gowalla, Yelp2018, AmazonBook 
+MODEL='MLP' # Can choose from MLP, LGConv
+EPOCHS=1000 # Number of epochs for training
+LOSS='align' # Can choose from BPR, SSM, align, MAWU
+REG='uniformity' # When using align, can add uniformity  
+GAMMA='1.0' # Weight of regularization term 
+WD='0.0' # When using PRISM, set to 0.0. Otherwise, can be set to a small value like 1e-6, as shown in paper. 
+LR='0.001' # Learning rate for training, we fine 0.001 tends to work well for most datasets. 
+PATIENCE='10' # Early stopping patience, we use checkpointing to go back to best model, so this can be set to a higher value if desired. 
+DEGREE_INIT_STR='1.0' # Degree inititialization strength of PRISM, 1.0 will initialize magnitude full based on degree. 
+DATA_PATH='model_chkps' # Path to save model checkpoints, can be set to any path you want.
 
 echo $DATASET
 

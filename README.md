@@ -42,6 +42,7 @@ To run tests on the trained model, you can use the provided script `./test.sh`. 
 2.  `models.py` - Contains the model architectures used in the paper. Any new models should be added here. Line 59/67 of this file is where the PRISM initialization is applied to the embedding vectors based on the popularity of users/items. Assuming the dataloader used contains the degree/popularity of the users/items, this logic can easily be applied to any model that uses embedding vectors.
 3.  `dataloader.py` - Contains the data loading and preprocessing logic. If you want to use a different dataset, you can modify this file accordingly.
 
+---
 
 ## Citation
 

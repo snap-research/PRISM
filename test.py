@@ -284,13 +284,9 @@ def main():
         all_results["train_loss"].append(model_configs["train_loss"])
         all_results["val_ndcg"].append(model_configs["val_ndcg"])
         all_results["model_configs"].append(model_configs)
-        all_results["user_embed"].append(stable_rank(torch.Tensor(user_embeddings)).item())
-        all_results["item_embed"].append(stable_rank(torch.Tensor(item_embeddings)).item())
-        
+
         user_magnitude = torch.norm(torch.Tensor(user_embeddings), dim=1)
         item_magnitude = torch.norm(torch.Tensor(item_embeddings), dim=1)
-
-       
 
         for k in user_degree.keys():
             mag = user_magnitude[k].item()
